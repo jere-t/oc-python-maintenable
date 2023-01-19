@@ -76,3 +76,39 @@ def search_film(name):
     # ...
 
 # En Python, rien n’est vraiment privé. Mais préfixer vos méthodes d’un underscore pour signaler qu’elles sont privées.
+
+# Les espaces #
+# Le code doit être indenté avec 4 espaces (et non des tabulations).
+# Mettez un seul espace autour des opérateurs d’affectation (  is_little = "little" in sanctuary  ) et des opérateurs logiques (  max_places  < 5  ). La seule exception intervient lorsque l’on fixe des valeurs par défaut en paramètres de fonctions et méthodes, telles que  def voiture(color, max_places=4):  .
+# Ne laissez jamais d’espaces tout de suite à l’intérieur de parenthèses ou de crochets. Écrivez  (expression)  et  [0]  , pas  ( expression )   ou  [ 0 ]  .
+# Ne laissez pas de blanc entre une fonction, comme  print()  , et ses arguments. print(f"test")
+# Laissez un espace entre  if  et toute parenthèse. La même règle s’applique à  for  . Ceci vise à être cohérent avec les situations où il n’y a pas de parenthèses.
+
+# Saut de ligne #
+# Avant une définition de classe (c’est-à-dire quand vous écrivez  class MyClass  ) ou une définition de fonction (c’est-à-dire quand vous écrivez  def my_function(...):  ), sautez deux lignes.
+# Avant une définition de méthode au sein d’une classe, ne sautez qu’une seule ligne.
+
+# Limiter les lignes de code à 79 caractères (plus facile ä suivre et rentre mieux dans les éditeurs).
+# Les fonctions avec beaucoup d'argument doivent s'écrire sur plusieurs lignes avec une indentation
+# Ces alternatives peuvent être utilisées:
+def function_with_a_rather_long_name(parameter_number_1, parameter_number_2,
+                                     parameter_number_3):
+# Même chose, mais avec un paramètre par ligne
+def function_with_a_rather_long_name(parameter_number_1,
+                                     parameter_number_2,
+                                     parameter_number_3):
+# Un paramètre par ligne, et la parenthèse au même niveau d’indentation que la fonction
+def function_with_a_rather_long_name(
+    parameter_number_1,
+    parameter_number_2,
+    Parameter_number_3
+):
+    
+# Organisation du fichier #
+# 1.Les commentaires qui concernent la totalité du fichier vont en haut.
+# 2.Les imports suivent cet ordre :
+#   2.1.Modules de la bibliothèque standard, par exemple  import random  .
+#   2.2.Modules de bibliothèques tierces, par exemple  import sklearn  .
+#   2.3.Modules locaux, par exemple  import mymodule  .
+# 3.Les constantes, par exemple  MY_CONSTANT = 77  .
+# 4.Tout autre code
