@@ -103,7 +103,7 @@ def function_with_a_rather_long_name(
     parameter_number_2,
     Parameter_number_3
 ):
-    
+
 # Organisation du fichier #
 # 1.Les commentaires qui concernent la totalité du fichier vont en haut.
 # 2.Les imports suivent cet ordre :
@@ -112,3 +112,64 @@ def function_with_a_rather_long_name(
 #   2.3.Modules locaux, par exemple  import mymodule  .
 # 3.Les constantes, par exemple  MY_CONSTANT = 77  .
 # 4.Tout autre code
+
+# Écrire du code antibug #
+
+# Faire des retours de fonctions cohérent
+    # Soit toutes les instructions  <return>  retournent une valeur, soit aucune ne le fait.
+    # Tous les types de retours doivent être les mêmes (sauf s’il y a une très bonne raison de faire autrement !).
+    # Utilisez  <return None>  plutôt qu’un  <return>  nu.
+def less_confusing_division(top, bottom):
+    """Divise "top" par "bottom"."""
+    if bottom == 0 or top == 0:
+        return None
+
+    if top % bottom != 0:
+        return None
+
+    return top / bottom
+
+
+if less_confusing_division(7, 3) is not None:
+    # fait quelque chose
+else:
+        # fait autre chose
+
+# Écrivez des chaînes cohérentes
+# Plutôt qu'écrire ça :
+phone_number = "0123456789"
+if phone_number[:3] == "012":
+    print("Yes!")
+# Utiliser les méthodes des types de base
+if phone_number.startswith(MY_START_PHONE_NUMBER):
+    print("Of course!")
+if phone_number.endswith("7890"):
+    print("Verily!")
+if "345" in phone_number:
+    print("Affirmative!")
+
+# Simplifiez les exceptions #
+    # Le bloc try doit couvrir le moins de code possible pour éviter de couvrir un autre bug
+    # N’utilisez jamais la clause <except> nue, car vous risquez de passer sous silence des erreurs critiques, et vous interférerez avec les exceptions <KeyboardInterrupt> et <SystemExit> , qui servent à arrêter le programme.
+
+def get_number():
+    """Get a number input and return it's value."""
+    try:
+        choice = input(f"Sélectionnez un nombre :")
+        number = int(choice)
+        return number
+    except ValueError: # as error (si besoin de récuperer)
+        print(f"{choice} n'est pas un nombre, on retourne None")
+        return None
+
+print(f"Le nombre est {get_number()}")
+
+# Suivre les recommandations de programmation #
+# https://peps.python.org/pep-0008/#programming-recommendations
+
+# Le plus important : Utiliser un linter pour vérifier automatiquement que PEP8 est respecté
+# Le plus connu est Flake8 : https://flake8.pycqa.org/en/latest/
+# Un linter online existe aussi : Pep8online
+
+# Des autoformateurs existent aussi pour automatiquement formater le code selon pep-8
+# Le plus connu est Black :  https://github.com/psf/black
