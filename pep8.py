@@ -76,6 +76,8 @@ def search_film(name):
     # ...
 
 # En Python, rien n’est vraiment privé. Mais préfixer vos méthodes d’un underscore pour signaler qu’elles sont privées.
+def __custom__(self):
+    pass
 
 # Les espaces #
 # Le code doit être indenté avec 4 espaces (et non des tabulations).
