@@ -175,3 +175,7 @@ print(f"Le nombre est {get_number()}")
 
 # Des autoformateurs existent aussi pour automatiquement formater le code selon pep-8
 # Le plus connu est Black :  https://github.com/psf/black
+
+# poetry : https://github.com/python-poetry/poetry
+# mypy : https://github.com/python/mypy
+# pydantic (or djantic for django) : typing env 
