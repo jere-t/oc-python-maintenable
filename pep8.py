@@ -31,7 +31,7 @@ def is_leap_year(year):
 
 # variables en minuscule avec underscore
 fuel_level = "1"
-# courantes en majuscule avec underscore
+# constantes en majuscule avec underscore
 FIRST_DAY_WEEK = "Monday"
 # classe en CapitalizedCase
 class BigDog:
